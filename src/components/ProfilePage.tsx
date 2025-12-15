@@ -87,10 +87,7 @@ export function ProfilePage() {
       <div className="rounded-lg border border-stroke dark:border-[#313D4A] bg-white dark:bg-[#24303F] shadow-sm dark:shadow-none overflow-hidden">
         {/* Cover Image */}
         <div className="relative h-48 bg-gradient-to-r from-[#3C50E0] to-[#6366F1]">
-          <button className="absolute bottom-4 right-4 flex h-9 items-center gap-2 rounded-md bg-white/90 px-4 text-sm font-medium text-[#1C2434] hover:bg-white transition-colors" aria-label="تغییر تصویر کاور">
-            <Camera className="h-4 w-4" />
-            تغییر کاور
-          </button>
+          
         </div>
 
         {/* Profile Info */}

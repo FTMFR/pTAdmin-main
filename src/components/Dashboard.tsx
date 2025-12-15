@@ -1,8 +1,8 @@
 // Dashboard Page Component
 
-import { CardDataStats } from './CardDataStats';
-import { Eye, ShoppingCart, ShoppingBag, Users } from 'lucide-react';
-import { toPersianNumber } from '../utils/numbers';
+import { CardDataStats } from "./CardDataStats";
+import { Eye, ShoppingCart, ShoppingBag, Users } from "lucide-react";
+import { toPersianNumber } from "../utils/numbers";
 
 export function Dashboard() {
   return (
@@ -11,32 +11,32 @@ export function Dashboard() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats
           title="کل بازدید"
-          total={`$${toPersianNumber('3.456')}`}
-          rate={`${toPersianNumber('0.43')}%`}
+          total={`$${toPersianNumber("3.456")}`}
+          rate={`${toPersianNumber("0.43")}%`}
           levelUp
         >
           <Eye className="fill-[#3C50E0] text-[#3C50E0]" />
         </CardDataStats>
         <CardDataStats
           title="کل سود"
-          total={`$${toPersianNumber('45.2')}`}
-          rate={`${toPersianNumber('4.35')}%`}
+          total={`$${toPersianNumber("45.2")}`}
+          rate={`${toPersianNumber("4.35")}%`}
           levelUp
         >
           <ShoppingCart className="fill-[#3C50E0] text-[#3C50E0]" />
         </CardDataStats>
         <CardDataStats
           title="کل محصول"
-          total={`${toPersianNumber('2.450')}`}
-          rate={`${toPersianNumber('2.59')}%`}
+          total={`${toPersianNumber("2.450")}`}
+          rate={`${toPersianNumber("2.59")}%`}
           levelUp
         >
           <ShoppingBag className="fill-[#3C50E0] text-[#3C50E0]" />
         </CardDataStats>
         <CardDataStats
           title="کل کاربران"
-          total={`${toPersianNumber('3.456')}`}
-          rate={`${toPersianNumber('0.95')}%`}
+          total={`${toPersianNumber("3.456")}`}
+          rate={`${toPersianNumber("0.95")}%`}
           levelDown
         >
           <Users className="fill-[#3C50E0] text-[#3C50E0]" />
@@ -64,7 +64,9 @@ export function Dashboard() {
                   d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <p className="text-[#64748B] dark:text-[#8A99AF]">نقشه جغرافیایی</p>
+              <p className="text-[#64748B] dark:text-[#8A99AF]">
+                نقشه جغرافیایی
+              </p>
             </div>
           </div>
         </div>
@@ -72,4 +74,3 @@ export function Dashboard() {
     </>
   );
 }
-

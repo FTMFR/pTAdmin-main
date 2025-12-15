@@ -1,9 +1,19 @@
-import { Search, Bell, MessageSquare, ChevronDown, Sun, Moon, User, Settings, LogOut } from 'lucide-react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../contexts/ThemeProvider';
-import { useAuth } from '../contexts/AuthContext';
-import { toast } from 'sonner';
+import {
+  Search,
+  Bell,
+  MessageSquare,
+  ChevronDown,
+  Sun,
+  Moon,
+  User,
+  Settings,
+  LogOut,
+} from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeProvider";
+import { useAuth } from "../contexts/AuthContext";
+import { toast } from "sonner";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -17,73 +27,73 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
   const [messageOpen, setMessageOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-  const currentTheme = theme || 'light';
+  const currentTheme = theme || "light";
 
   const handleLogout = async () => {
     try {
       await logout();
-      toast.success('خروج با موفقیت انجام شد');
-      navigate('/auth/login');
+      toast.success("خروج با موفقیت انجام شد");
+      navigate("/auth/login");
     } catch (error: any) {
-      toast.error(error.message || 'خطا در خروج');
+      toast.error(error.message || "خطا در خروج");
     }
   };
 
   const notifications = [
     {
-      name: 'تری فرانک',
-      avatar: 'ت',
-      message: 'درخواست مجوز تغییر پروژه - Nganter App',
-      category: 'پروژه',
-      time: '۵ دقیقه پیش',
+      name: "تری فرانک",
+      avatar: "ت",
+      message: "درخواست مجوز تغییر پروژه - Nganter App",
+      category: "پروژه",
+      time: "۵ دقیقه پیش",
       unread: true,
     },
     {
-      name: 'آلنا فرانک',
-      avatar: 'آ',
-      message: 'درخواست مجوز تغییر پروژه - Nganter App',
-      category: 'پروژه',
-      time: '۸ دقیقه پیش',
+      name: "آلنا فرانک",
+      avatar: "آ",
+      message: "درخواست مجوز تغییر پروژه - Nganter App",
+      category: "پروژه",
+      time: "۸ دقیقه پیش",
       unread: true,
     },
     {
-      name: 'جوسلین کنتر',
-      avatar: 'ج',
-      message: 'درخواست مجوز تغییر پروژه - Nganter App',
-      category: 'پروژه',
-      time: '۱۵ دقیقه پیش',
+      name: "جوسلین کنتر",
+      avatar: "ج",
+      message: "درخواست مجوز تغییر پروژه - Nganter App",
+      category: "پروژه",
+      time: "۱۵ دقیقه پیش",
       unread: false,
     },
     {
-      name: 'براندون فیلیپس',
-      avatar: 'ب',
-      message: 'درخواست مجوز تغییر پروژه - Nganter App',
-      category: 'پروژه',
-      time: '۱ ساعت پیش',
+      name: "براندون فیلیپس",
+      avatar: "ب",
+      message: "درخواست مجوز تغییر پروژه - Nganter App",
+      category: "پروژه",
+      time: "۱ ساعت پیش",
       unread: false,
     },
   ];
 
   const messages = [
     {
-      name: 'مریم نصیری',
-      message: 'سلام! چطور می‌تونم کمکتون کنم؟',
-      time: '۵ دقیقه',
-      avatar: 'م',
+      name: "مریم نصیری",
+      message: "سلام! چطور می‌تونم کمکتون کنم؟",
+      time: "۵ دقیقه",
+      avatar: "م",
       online: true,
     },
     {
-      name: 'حسین کریمی',
-      message: 'لورم ایپسوم متن ساختگی',
-      time: '۱۵ دقیقه',
-      avatar: 'ح',
+      name: "حسین کریمی",
+      message: "لورم ایپسوم متن ساختگی",
+      time: "۱۵ دقیقه",
+      avatar: "ح",
       online: false,
     },
     {
-      name: 'زهرا احمدی',
-      message: 'ممنون از پیگیری شما',
-      time: '۳۰ دقیقه',
-      avatar: 'ز',
+      name: "زهرا احمدی",
+      message: "ممنون از پیگیری شما",
+      time: "۳۰ دقیقه",
+      avatar: "ز",
       online: true,
     },
   ];
@@ -97,7 +107,9 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className={`z-50 flex h-10 w-10 items-center justify-center rounded-lg border border-stroke dark:border-[#313D4A] text-[#64748B] dark:text-[#8A99AF] lg:h-11 lg:w-11 transition-colors ${
-              sidebarOpen ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-[#313D4A]' : 'bg-white dark:bg-[#24303F] hover:bg-gray-100 dark:hover:bg-[#313D4A]'
+              sidebarOpen
+                ? "lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-[#313D4A]"
+                : "bg-white dark:bg-[#24303F] hover:bg-gray-100 dark:hover:bg-[#313D4A]"
             }`}
             aria-label="باز/بسته کردن منو"
           >
@@ -120,7 +132,9 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
 
             {/* Mobile Icon - Hamburger */}
             <svg
-              className={`fill-current lg:hidden ${sidebarOpen ? 'hidden' : 'block'}`}
+              className={`fill-current lg:hidden ${
+                sidebarOpen ? "hidden" : "block"
+              }`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -137,7 +151,9 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
 
             {/* Mobile Icon - Close */}
             <svg
-              className={`fill-current lg:hidden ${sidebarOpen ? 'block' : 'hidden'}`}
+              className={`fill-current lg:hidden ${
+                sidebarOpen ? "block" : "hidden"
+              }`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -158,9 +174,7 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             <form>
               <div className="relative">
                 <span className="absolute top-1/2 right-4 -translate-y-1/2 pointer-events-none z-10">
-                  <Search
-                    className="w-5 h-5 fill-[#64748B] dark:fill-[#8A99AF]"
-                  />
+                  <Search className="w-5 h-5 fill-[#64748B] dark:fill-[#8A99AF]" />
                 </span>
                 <input
                   type="text"
@@ -172,10 +186,7 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                   id="search-button"
                   type="button"
                   className="absolute top-1/2 right-2.5 inline-flex -translate-y-1/2 items-center gap-0.5 rounded-lg border border-stroke dark:border-[#313D4A] bg-gray-50 dark:bg-white/[0.03] px-[7px] py-[4.5px] text-xs -tracking-[0.2px] text-[#64748B] dark:text-[#8A99AF]"
-                >
-                  <span> ⌘ </span>
-                  <span> K </span>
-                </button>
+                ></button>
               </div>
             </form>
           </div>
@@ -188,12 +199,12 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             <li>
               <button
                 onClick={() => {
-                  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                  setTheme(currentTheme === "dark" ? "light" : "dark");
                 }}
                 className="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border border-stroke dark:border-[#313D4A] bg-gray dark:bg-[#313D4A] hover:bg-gray-2 dark:hover:bg-[#404D5E]"
                 aria-label="تغییر تم"
               >
-                {currentTheme === 'dark' ? (
+                {currentTheme === "dark" ? (
                   <Sun className="w-5 h-5 dark:text-white" />
                 ) : (
                   <Moon className="w-5 h-5" />
@@ -220,10 +231,21 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
               {notificationOpen && (
                 <>
                   <div
-                    className="fixed inset-0 z-40"
+                    className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
                     onClick={() => setNotificationOpen(false)}
                   ></div>
-                  <div className="absolute -right-16 sm:right-0 mt-2.5 flex w-75 sm:w-80 flex-col rounded-lg border border-stroke dark:border-[#313D4A] bg-white dark:bg-[#24303F] shadow-lg z-50">
+                  <div
+                    className="
+    fixed z-50 mt-2.5
+    left-3 top-[4.5rem]
+    w-[75vw] max-w-xs
+    sm:w-auto sm:max-w-md
+    flex flex-col
+    rounded-lg border-2 border-[#3C50E0]/30 dark:border-[#3C50E0]/20
+    bg-white dark:bg-[#24303F]
+    shadow-2xl
+  "
+                  >
                     <div className="flex items-center justify-between px-4.5 py-3 border-b border-stroke dark:border-[#313D4A]">
                       <h5 className="text-sm font-medium text-[#1C2434] dark:text-white">
                         اعلان‌ها
@@ -232,8 +254,18 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                         onClick={() => setNotificationOpen(false)}
                         className="text-[#64748B] dark:text-[#8A99AF] hover:text-[#1C2434] dark:hover:text-white"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -242,7 +274,7 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                         <li key={index}>
                           <a
                             href="#"
-                            className="flex gap-3 border-b border-stroke dark:border-[#313D4A] px-4.5 py-3 hover:bg-gray-2 dark:hover:bg-[#313D4A]"
+                            className="flex gap-3 border-b border-stroke dark:border-[#313D4A] px-3 py-3 hover:bg-gray-2 dark:hover:bg-[#313D4A]"
                           >
                             <div className="h-12 w-12 rounded-full bg-[#3C50E0] flex items-center justify-center text-white flex-shrink-0">
                               {notif.unread && (
@@ -252,10 +284,16 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                             </div>
                             <div className="flex-1">
                               <p className="text-sm mb-1">
-                                <span className="text-[#1C2434] dark:text-white font-medium">{notif.name}</span>{' '}
-                                <span className="text-[#64748B] dark:text-[#8A99AF]">{notif.message}</span>
+                                <span className="text-[#1C2434] dark:text-white font-medium">
+                                  {notif.name}
+                                </span>{" "}
+                                <span className="text-[#64748B] dark:text-[#8A99AF]">
+                                  {notif.message}
+                                </span>
                               </p>
-                              <p className="text-xs text-[#64748B] dark:text-[#8A99AF]">{notif.category} • {notif.time}</p>
+                              <p className="text-xs text-[#64748B] dark:text-[#8A99AF]">
+                                {notif.category} • {notif.time}
+                              </p>
                             </div>
                           </a>
                         </li>
@@ -290,10 +328,21 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
               {messageOpen && (
                 <>
                   <div
-                    className="fixed inset-0 z-40"
+                    className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
                     onClick={() => setMessageOpen(false)}
                   ></div>
-                  <div className="absolute -right-16 sm:right-0 mt-2.5 flex w-75 sm:w-80 flex-col rounded-lg border border-stroke dark:border-[#313D4A] bg-white dark:bg-[#24303F] shadow-lg z-50">
+                  <div
+                    className="
+    fixed z-50 mt-2.5
+    left-3 top-[4.5rem]
+    w-[90vw] max-w-sm
+    sm:w-auto sm:max-w-md
+    flex flex-col
+    rounded-lg border-2 border-[#3C50E0]/30 dark:border-[#3C50E0]/20
+    bg-white dark:bg-[#24303F]
+    shadow-2xl
+  "
+                  >
                     <div className="px-4.5 py-3 border-b border-stroke dark:border-[#313D4A]">
                       <h5 className="text-sm font-medium text-[#1C2434] dark:text-white">
                         پیام‌ها
@@ -345,15 +394,15 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             >
               <span className="hidden text-right lg:block">
                 <span className="block text-sm font-medium text-[#1C2434] dark:text-white">
-                  {user?.fullName || 'کاربر'}
+                  {user?.fullName || "کاربر"}
                 </span>
                 <span className="block text-xs text-[#64748B] dark:text-[#8A99AF]">
-                  {user?.role === 'admin' ? 'مدیر سیستم' : 'کاربر'}
+                  {user?.role === "admin" ? "مدیر سیستم" : "کاربر"}
                 </span>
               </span>
 
               <span className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                <span>{user?.avatar || user?.fullName?.[0] || 'ک'}</span>
+                <span>{user?.avatar || user?.fullName?.[0] || "ک"}</span>
               </span>
 
               <ChevronDown className="hidden sm:block w-4 h-4 dark:text-white" />
@@ -362,13 +411,28 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             {profileOpen && (
               <>
                 <div
-                  className="fixed inset-0 z-40"
+                  className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
                   onClick={() => setProfileOpen(false)}
                 ></div>
-                <div className="absolute right-0 mt-4 flex w-62.5 flex-col rounded-lg border border-stroke dark:border-[#313D4A] bg-white dark:bg-[#24303F] shadow-lg z-50">
+                <div
+                  className="
+    fixed z-50 mt-2.5
+    left-3 top-[4.5rem]
+    w-[90vw] max-w-sm
+    sm:w-auto sm:max-w-md
+    flex flex-col
+    rounded-lg border-2 border-[#3C50E0]/30 dark:border-[#3C50E0]/20
+    bg-white dark:bg-[#24303F]
+    shadow-2xl
+  "
+                >
                   <div className="px-6 py-4 border-b border-stroke dark:border-[#313D4A]">
-                    <p className="text-sm font-medium text-[#1C2434] dark:text-white">{user?.fullName || 'کاربر'}</p>
-                    <p className="text-xs text-[#64748B] dark:text-[#8A99AF] mt-0.5">{user?.email || ''}</p>
+                    <p className="text-sm font-medium text-[#1C2434] dark:text-white">
+                      {user?.fullName || "کاربر"}
+                    </p>
+                    <p className="text-xs text-[#64748B] dark:text-[#8A99AF] mt-0.5">
+                      {user?.email || ""}
+                    </p>
                   </div>
                   <ul className="flex flex-col py-2">
                     <li>
@@ -394,8 +458,18 @@ export function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                         href="#"
                         className="flex items-center gap-3.5 px-6 py-3 text-sm font-medium duration-300 ease-in-out hover:bg-gray-2 dark:hover:bg-[#313D4A] text-[#1C2434] dark:text-white"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                          />
                         </svg>
                         پشتیبانی
                       </a>
