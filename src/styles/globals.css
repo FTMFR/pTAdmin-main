@@ -1,0 +1,371 @@
+@custom-variant dark (&:is(.dark *));
+
+@import url('https://cdn.jsdelivr.net/npm/vazirmatn@33.003/Vazirmatn-font-face.css');
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* TailAdmin Color Variables */
+  --tailadmin-primary: #3C50E0;
+  --tailadmin-primary-dark: #2E3FBF;
+  --tailadmin-primary-light: #5B6FE8;
+  --tailadmin-background-light: #F1F5F9;
+  --tailadmin-background-dark: #1C2434;
+  --tailadmin-background-dark-secondary: #24303F;
+  --tailadmin-background-dark-tertiary: #313D4A;
+  --tailadmin-background-dark-quaternary: #1A222C;
+  --tailadmin-text-primary: #1C2434;
+  --tailadmin-text-secondary: #64748B;
+  --tailadmin-text-tertiary: #8A99AF;
+  --tailadmin-text-light: #DEE4EE;
+  --tailadmin-stroke: #E2E8F0;
+  --tailadmin-stroke-dark: #313D4A;
+  --tailadmin-success: #10B981;
+  --tailadmin-warning: #F59E0B;
+  --tailadmin-error: #EF4444;
+  --tailadmin-chart-blue: #3C50E0;
+  --tailadmin-chart-blue-light: #80CAEE;
+  --tailadmin-chart-purple: #6577F3;
+  --tailadmin-chart-cyan: #8FD0EF;
+  --tailadmin-chart-teal: #0FADCF;
+  --tailadmin-sidebar-bg: #1C2434;
+  --tailadmin-sidebar-hover: #333A48;
+  --tailadmin-sidebar-text: #DEE4EE;
+  --tailadmin-sidebar-text-secondary: #8A99AF;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+
+  /* TailAdmin Color Variables - Dark Mode */
+  --tailadmin-primary: #3C50E0;
+  --tailadmin-primary-dark: #2E3FBF;
+  --tailadmin-primary-light: #5B6FE8;
+  --tailadmin-background-light: #1A222C;
+  --tailadmin-background-dark: #1C2434;
+  --tailadmin-background-dark-secondary: #24303F;
+  --tailadmin-background-dark-tertiary: #313D4A;
+  --tailadmin-background-dark-quaternary: #1A222C;
+  --tailadmin-text-primary: #ffffff;
+  --tailadmin-text-secondary: #8A99AF;
+  --tailadmin-text-tertiary: #8A99AF;
+  --tailadmin-text-light: #DEE4EE;
+  --tailadmin-stroke: #313D4A;
+  --tailadmin-stroke-dark: #313D4A;
+  --tailadmin-success: #10B981;
+  --tailadmin-warning: #F59E0B;
+  --tailadmin-error: #EF4444;
+  --tailadmin-chart-blue: #3C50E0;
+  --tailadmin-chart-blue-light: #80CAEE;
+  --tailadmin-chart-purple: #6577F3;
+  --tailadmin-chart-cyan: #8FD0EF;
+  --tailadmin-chart-teal: #0FADCF;
+  --tailadmin-sidebar-bg: #1C2434;
+  --tailadmin-sidebar-hover: #333A48;
+  --tailadmin-sidebar-text: #DEE4EE;
+  --tailadmin-sidebar-text-secondary: #8A99AF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* TailAdmin Custom Utilities */
+@layer utilities {
+  .text-title-md {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .h-5.5 {
+    height: 1.375rem;
+  }
+
+  .w-5.5 {
+    width: 1.375rem;
+  }
+
+  .h-8.5 {
+    height: 2.125rem;
+  }
+
+  .w-8.5 {
+    width: 2.125rem;
+  }
+
+  .h-11.5 {
+    height: 2.875rem;
+  }
+
+  .w-11.5 {
+    width: 2.875rem;
+  }
+
+  .h-90 {
+    height: 22.5rem;
+  }
+
+  .w-75 {
+    width: 18.75rem;
+  }
+
+  .w-62.5 {
+    width: 15.625rem;
+  }
+
+  .max-h-90 {
+    max-height: 22.5rem;
+  }
+
+  .min-w-47.5 {
+    min-width: 11.875rem;
+  }
+
+  .max-w-45 {
+    max-width: 11.25rem;
+  }
+
+  .px-7.5 {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+  }
+
+  .py-7.5 {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+
+  .pt-7.5 {
+    padding-top: 1.875rem;
+  }
+
+  .pb-7.5 {
+    padding-bottom: 1.875rem;
+  }
+
+  .py-6.5 {
+    padding-top: 1.625rem;
+    padding-bottom: 1.625rem;
+  }
+
+  .py-5.5 {
+    padding-top: 1.375rem;
+    padding-bottom: 1.375rem;
+  }
+
+  .px-4.5 {
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+  }
+
+  .py-4.5 {
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+  }
+
+  .gap-7.5 {
+    gap: 1.875rem;
+  }
+
+  .z-1 {
+    z-index: 1;
+  }
+
+  .z-999999 {
+    z-index: 999999;
+  }
+
+  /* Common Component Styles */
+  .input-base {
+    @apply w-full rounded-md border border-stroke dark:border-[#313D4A] bg-transparent px-4 py-3 text-[#1C2434] dark:text-white outline-none transition focus:border-[#3C50E0] active:border-[#3C50E0];
+  }
+
+  .card-base {
+    @apply rounded-lg border border-stroke dark:border-[#313D4A] bg-white dark:bg-[#24303F] shadow-sm dark:shadow-none;
+  }
+
+  .card-header {
+    @apply border-b border-stroke dark:border-[#313D4A] px-6 py-4;
+  }
+
+  .button-primary {
+    @apply rounded-md bg-[#3C50E0] px-6 py-3 text-sm font-medium text-white hover:bg-[#3C50E0]/90 transition-colors;
+  }
+
+  .button-secondary {
+    @apply rounded-md border border-stroke dark:border-[#313D4A] px-6 py-3 text-sm font-medium text-[#1C2434] dark:text-white hover:border-[#3C50E0] hover:bg-[#3C50E0]/5 transition-colors;
+  }
+}
