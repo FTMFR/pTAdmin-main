@@ -1,7 +1,6 @@
 // Dashboard Page Component
 
 import { CardDataStats } from './CardDataStats';
-import { ChartOne } from './ChartOne';
 import { ChartThree } from './ChartThree';
 import { TableOne } from './TableOne';
 import { ChatCard } from './ChatCard';
@@ -49,8 +48,6 @@ export function Dashboard() {
 
       {/* Charts Section */}
       <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        <ChartOne />
-        <ChartThree />
         <ChatCard />
 
         <div className="col-span-12 xl:col-span-8">
